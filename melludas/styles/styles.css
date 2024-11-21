@@ -1,0 +1,47 @@
+footer{
+    position: absolute;
+    text-align: left;
+    bottom: 0;
+}
+nav{
+    background-color: rgb(224, 117, 138);
+}
+.topnav {
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #f7ae10;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: black;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: rgb(174, 255, 1);
+  }
+.Text{
+background-color: #04AA6D;
+color: antiquewhite;
+}
+.News{
+    background-color: rgb(45, 107, 107);
+}
+.title1{
+background-color: rgb(11, 179, 118);
+color: rgb(21, 73, 75);
+
+}
