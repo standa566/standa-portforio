@@ -1,13 +1,18 @@
+body{
+  color: s#000000;
+  background-color: #00000000;
+}
 footer{
     position: absolute;
     text-align: left;
     bottom: 0;
+    
 }
-nav{
+.napbar{
     background-color: rgb(224, 117, 138);
 }
 .topnav {
-    background-color: #ffffff;
+    background-color: #020000;
     overflow: hidden;
   }
   
@@ -19,7 +24,7 @@ nav{
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
   }
   
   /* Change the color of links on hover */
@@ -35,12 +40,12 @@ nav{
   }
 .Text{
 background-color: #04AA6D;
-color: antiquewhite;
+color: rgb(209, 202, 193);
 }
 .News{
     background-color: rgb(45, 107, 107);
 }
-.title1{
+.title{
 background-color: rgb(11, 179, 118);
 color: rgb(21, 73, 75);
 
