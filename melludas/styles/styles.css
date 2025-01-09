@@ -3,6 +3,7 @@ body{
   color: #000000;
   background-color: #00000000;
   height: 200vh;
+  font-family: "stardom";
 }
 footer{
   position: fixed;
@@ -59,11 +60,34 @@ color: rgb(21, 73, 75);
 }
 .hh{
   display: flex;
-nav-down:unset
+
 }
 section{
   height: 100vh;
 }
 html {
   scroll-behavior: smooth;
+}
+@font-face {
+  font-family: "Stardom" ;
+  src: url("../fonts/Stardom-Regular.woff");
+}
+@font-face {
+  font-family: "Stardom";
+  src: url("../fonts/Stardom-Regular.ttf");
+}
+.ggggg{
+  background-color: #04AA6D;
+  
+  left: auto;
+}
+.title1 {
+  background-color: #f7e0e0;
+  color: rgb(245, 70, 70);
+  
+}
+.myDiv {
+  border: 5px outset red;
+  background-color: lightblue;    
+  text-align: center;
 }
