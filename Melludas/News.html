@@ -1,24 +1,137 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-   <link rel="stylesheet" href="styles/style_body.css">
-  
-    <title>Document</title>
-</head>
-<body>
-    <div class="body">to
-    </div>
-    <footer>
-        Copyring 
-        <p>
-            <a href="mailto:masny@gmail.com">stasnda1478@gmail.com
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title >seznam fimu anime serialu</title >
+<style >
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+background-color: #1c838d;
+}
+h1 {
+color: #0b0707;
+}
+.container {
+display: flex;
+justify-content: space-around;
+}
+.list {
+width: 30%;
+background: #1583c8;
+border: 1px solid #2f87bd;
+border-radius: 5px;
+padding: 15px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.list h2 {
+color: #000000;
+}
+ul {
+list-style: none;
+padding: 0;
+}
+li {
+padding: 5px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+button {
+padding: 5px 10px;
+background: #007bff;
+color: rgb(255, 253, 253);
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+button:hover {
+background: #0056b3;
+}
+input {
+width: 70%;
+padding: 5px;
+margin: 5px 0;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+</style >
+</head >
+<body >
+<h1 >Seznam</h1 >
+<div class="container" >
+<div class="list" id="series-list" >
+<h2 >Serialy</h2 >
+<input type="text" id="series-input" placeholder="Přidat serial" >
+<button onclick="addItem('series')" >Přidat</button >
+<ul id="series-ul" ></ul >
+</div >
+<div class="list" id="anime-list" >
+<h2 >Anime</h2 >
+<input type="text" id="anime-input" placeholder="Přidat anime" >
+<button onclick="addItem('anime')" >Přidat</button >
+<ul id="anime-ul" ></ul >
+</div >
+<div class="list" id="movies-list" >
+<h2 >Filmy</h2 >
+<input type="text" id="movies-input" placeholder="Přidat film" >
+<button onclick="addItem('movies')" >Přidat</button >
+<ul id="movies-ul" ></ul >
+</div >
+</div >
 
-            </a>
-        </p>
-    </footer>
-    <div class="hooo">ů</div>
-</body>
-</html>
+
+<style>
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #e6a00a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #000000;
+    color: rgb(183, 255, 0);
+  }
+  
+  
+  
+  footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  text-align: center;
+
+}
+</style>
+</div>
+
+
+<footer>
+    <nav class="napbar">
+        <div class="body">
+            <div class="topnav">
+                <a class="active" href="/index1.html">Domovska stranka</a>
+                <a  href="/projects.html">Project</a>
+                <a  href="/contact.html">Contact</a>
+                <a  href="/about.html">Text</a>
+                <a href="/News.html">News</a>
+                
+              </div>
+        </div>
+    </nav>
+</footer>
+
+
+</div>
+</body >
+</html >
