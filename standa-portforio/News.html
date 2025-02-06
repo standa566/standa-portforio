@@ -1,0 +1,167 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title >seznam fimu anime serialu</title >
+<style >
+  /* Styl pro mobilní zařízení */
+  @media (max-width: 600px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            .characters img {
+                width: 180px;
+                height: auto;
+            }
+
+            .cta-button {
+                font-size: 1.2em;
+                padding: 15px 30px;
+            }
+            .list {
+width: 30%;
+background: #0d91a0;
+border-bottom: #000000;
+border: 5px solid #1ecdd3;
+border-radius: 5px;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+        }
+body {
+font-family: Arial, sans-serif;
+margin: 50px;
+background-color: #09525a;
+}
+h1 {
+color: #1ca4b9;
+}
+.container {
+display: flex;
+justify-content: space-around;
+}
+.list {
+width: 50%;
+background: #0d91a0;
+border-bottom: #000000;
+border: 5px solid #1ecdd3;
+border-radius: 5px;
+padding: 20px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+.list h2 {
+color: #000000;
+}
+ul {
+list-style: none;
+padding: 0;
+}
+li {
+padding: 5px 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+button {
+padding: 5px 10px;
+background: #126667;
+color: rgb(255, 253, 253);
+border: none;
+border-radius: 3px;
+cursor: pointer;
+}
+button:hover {
+background: #0b9a89;
+}
+input {
+width: 70%;
+padding: 5px;
+margin: 5px 0;
+border: 1px solid #ccc;
+border-radius: 3px;
+}
+</style >
+</head >
+<body >
+<h1 >Seznam</h1 >
+<div class="container" >
+</div >
+
+<div class="list" id="series-list" >
+  <h2 >Serialy</h2 >
+  <input type="text" id="series-input" placeholder="Přidat serial" >
+  <button onclick="addItem('series')" >Přidat</button >
+  <ul id="series-ul" ></ul >
+  </div >
+
+<div class="list" id="anime-list" >
+<h2 >Anime</h2 >
+<input type="text" id="anime-input" placeholder="Přidat anime" >
+<button onclick="addItem('anime')" >Přidat</button >
+<ul id="anime-ul" ></ul >
+</div >
+
+</div >
+<div class="list" id="movies-list" >
+<h2 >Filmy</h2 >
+<input type="text" id="movies-input" placeholder="Přidat film" >
+<button onclick="addItem('movies')" >Přidat</button >
+<ul id="movies-ul" ></ul >
+</div >
+
+<style>
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: #12bd8d;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #000000;
+    color: rgb(183, 255, 0);
+  }
+  
+  
+  
+  footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  
+  text-align: center;
+
+}
+</style>
+</div>
+
+
+<footer>
+    <nav class="napbar">
+        <div class="body">
+            <div class="topnav">
+                <a class="active" href="/index1.html">Domovska stranka</a>
+                <a  href="/projects.html">Project</a>
+                <a  href="/contact.html">Contact</a>
+                <a  href="/about.html">Text</a>
+                <a href="index.html">The beginning</a>
+                
+              </div>
+        </div>
+    </nav>
+</footer>
+
+
+</div>
+</body >
+</html >
