@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(169, 128, 128);
+    color: aqua;
+}
+h1{
+    color: blue;
+
+}
+
+.horizontal-scroll {
+    height: 100vh;
+    background-color: #ccc;
+    overflow: hidden;
+}
+
+.horizontal-content {
+    display: flex;
+    gap: 20px;
+}
+.box{
+    height: 100;
+    width: 100;
+    background-color: aquamarine;
+    
+}
