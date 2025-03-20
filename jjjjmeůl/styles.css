@@ -2,13 +2,11 @@ body{
     background-color: rgb(169, 128, 128);
     color: aqua;
 }
-h1{
-    color: blue;
 
-}
 
 .horizontal-scroll {
-    height: 100vh;
+    height: 100%;
+    width: 100%;
     background-color: #ccc;
     overflow: hidden;
 }
@@ -18,8 +16,116 @@ h1{
     gap: 20px;
 }
 .box{
-    height: 100;
-    width: 100;
-    background-color: aquamarine;
     
+    background-color: aquamarine;
+    color: #000000;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 3.0s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 2s ease;
 }
+
+
+h1 {
+    font-size: 2.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+p {
+    font-size: 1.1rem;
+    color: #000000;
+    line-height: 1.5;
+    animation: fadeInText 2s ease-in-out;
+}
+.container {
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    height: 7vh;
+    position: relative;
+}
+
+/* Animace */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-50%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+ 
+
+
+
+/* Pozadí s japonským motivem */
+.background {
+    
+   
+    
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+   
+  
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+
+
+    
+    
+
+}
+.jj{
+   
+    color: #000000;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 15px;
+    padding: 15px 30px;
+    cursor: pointer;
+  
+
+}
+     

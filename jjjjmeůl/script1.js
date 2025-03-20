@@ -8,7 +8,7 @@ function pythogorovaVeta(a,b,){
     pythogorovaVeta(10,9)
     
     gsap.to('.horizontal-content', {
-        xPercent: -100 * (document.querySelectorAll('.box').length - 1),
+        xPercent: -1000 * (document.querySelectorAll('.box').length - 10),
         ease: 'none',
         scrollTrigger: {
             trigger: '.horizontal-scroll',

@@ -1,10 +1,22 @@
-//1
-gsap.registerPlugin(ScrollTrigger);
+
 //2 tvorba animace
 gsap.to('.box',{
-    x: 200,
-    duration: 1
-})
+   x: 850, y: 500, duration: 2, rotation: 360, scale: 1.5, opacity: 11.5, delay: 1, repeat: 0.1, yoyo: true, ease: 'bounce'
+      
+        
+   }, 
+
+  
+   
+    
+    
+
+
+
+) 
+
+    
+
 
 
 
