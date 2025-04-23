@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Luxusní osobní web věnovaný exkluzivním superautům, moderním technologiím a tmavě zelené estetice. Prozkoumejte galerii vozů, videa, specifikace a více!">
+    <meta name="keywords" content="superauta, luxusní vozy, tmavě zelená, galerie, video, technologie, design, inovace">
+    <meta name="author" content="Tvůj Jméno">
+    <title>Luxusní svět superaut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700;900&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: linear-gradient(135deg, #1a2b1d 0%, #2b4c33 100%);
+            color: #e6f0ea;
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1519750157634-b6d493a0f77c') no-repeat center center/cover;
+            opacity: 0.08;
+            z-index: -1;
+            filter: grayscale(40%) blur(3px);
+        }
+
+        .slider {
+            width: 100%;
+            height: 120vh; /* Zvýšená výška pro větší prostor */
+            position: relative;
+            overflow: hidden;
+            background: #1a2b1d;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+            border-bottom: 6px solid #4caf50;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 1.5s ease-in-out, transform 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transform: translateX(100%);
+            z-index: 1;
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 2;
+        }
+
+        .slide.exiting {
+            opacity: 0;
+            transform: translateX(-100%);
+            z-index: 1;
+        }
+
+        .slide1 {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b');
+            background-attachment: fixed;
+        }
+
+        .slide2 {
+            background: linear-gradient(180deg, #2b4c33, #1a2b1d);
+        }
+
+        .slide3 {
+            background: linear-gradient(180deg, #2b4c33, #1a2b1d);
+        }
+
+        .slide4 {
+            background: linear-gradient(180deg, #2b4c33, #1a2b1d);
+        }
+
+        .content {
+            text-align: center;
+            background: rgba(26, 43, 29, 0.95);
+            padding: 8rem 7rem;
+            border-radius: 40px;
+            max-width: 1200px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+            animation: slideUp 2.2s ease-out;
+            backdrop-filter: blur(25px);
+            border: 5px solid #4caf50;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border-radius: 45px;
+            background: linear-gradient(45deg, #4caf50, #a5d6a7);
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(150px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 6px 6px 12px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(45deg, #4caf50, #a5d6a7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, #4caf50, #a5d6a7);
+            border-radius: 4px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #a5d6a7;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 2.3;
+            color: #c8e6c9;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .highlight {
+            color: #a5d6a7;
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: #4caf50;
+            text-decoration-thickness: 5px;
+            text-underline-offset: 6px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 3.5rem;
+            margin-top: 4rem;
+        }
+
+        .social-links a {
+            color: #4caf50;
+            font-size: 2.8rem;
+            transition: all 0.7s ease;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .social-links a::before {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 140%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4caf50;
+            color: #e6f0ea;
+            padding: 12px 18px;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .social-links a:hover::before {
+            opacity: 1;
+        }
+
+        .social-links a:hover {
+            color: #a5d6a7;
+            transform: scale(1.6) rotate(12deg);
+            text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+        }
+
+        .video-container {
+            max-width: 1800px; /* Zvýšená šířka videa */
+            margin: 0 auto;
+            padding: 80px;
+            background: rgba(26, 43, 29, 0.97);
+            border-radius: 40px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2.5s ease-in-out;
+            border: 6px solid #4caf50;
+            position: relative;
+        }
+
+        .video-container::before {
+            content: 'Inspirativní video';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #e6f0ea;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: #4caf50;
+            padding: 12px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 900px;
+            border-radius: 35px;
+            border: 8px solid #4caf50;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            transition: transform 0.7s ease, box-shadow 0.7s ease;
+        }
+
+        .video-container:hover iframe {
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            padding: 80px;
+            max-width: 2200px;
+            margin: 0 auto;
+            background: rgba(26, 43, 29, 0.97);
+            border-radius: 40px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+            border: 6px solid #4caf50;
+            position: relative;
+        }
+
+        .gallery::before {
+            content: 'Galerie ikonických superaut';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #e6f0ea;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: #4caf50;
+            padding: 12px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery figure {
+            position: relative;
+            overflow: hidden;
+            border-radius: 35px;
+            transition: transform 0.8s ease;
+            background: #1a2b1d;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 35px;
+            border: 7px solid #4caf50;
+            transition: all 0.8s ease;
+            filter: brightness(75%) contrast(120%);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.3);
+            border-color: #a5d6a7;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+            filter: brightness(100%) contrast(130%);
+        }
+
+        .gallery figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(76, 175, 80, 0.94);
+            color: #e6f0ea;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.4rem;
+            font-weight: 700;
+            transform: translateY(100%);
+            transition: transform 0.8s ease;
+            border-bottom-left-radius: 35px;
+            border-bottom-right-radius: 35px;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .gallery figure:hover figcaption {
+            transform: translateY(0);
+        }
+
+        .spec-section {
+            max-width: 1400px;
+            margin: 100px auto;
+            padding: 80px;
+            background: rgba(26, 43, 29, 0.97);
+            border-radius: 40px;
+            box-shadow: 0 30px 90px rgba(0, 0, 0, 0.7);
+            border: 6px solid #4caf50;
+            position: relative;
+        }
+
+        .spec-section::before {
+            content: 'Technické specifikace';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #e6f0ea;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: #4caf50;
+            padding: 12px 30px;
+            border-radius: 30px;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .spec-card {
+            background: rgba(76, 175, 80, 0.1);
+            padding: 30px;
+            border-radius: 25px;
+            border: 3px solid #4caf50;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .spec-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .spec-card h3 {
+            font-size: 1.8rem;
+            color: #a5d6a7;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .spec-card ul {
+            list-style: none;
+            font-size: 1.2rem;
+            color: #c8e6c9;
+        }
+
+        .spec-card ul li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .spec-card ul li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: #4caf50;
+            font-size: 1.2rem;
+        }
+
+        .buttons {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 4rem;
+            z-index: 3;
+        }
+
+        button {
+            padding: 25px 80px;
+            border: none;
+            background: linear-gradient(45deg, #4caf50, #a5d6a7);
+            color: #e6f0ea;
+            border-radius: 60px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            transition: all 0.8s ease;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.8s ease;
+            z-index: -1;
+        }
+
+        button:hover::before {
+            left: 100%;
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #388e3c, #4caf50);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .navbar {
+            position: sticky; /* Změněno z fixed na sticky pro zůstání na místě při scrollování */
+            top: 0;
+            width: 100%;
+            background: rgba(26, 43, 29, 0.97);
+            padding: 40px 0;
+            z-index: 1000;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(20px);
+            border-bottom: 5px solid #4caf50;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 7rem;
+        }
+
+        .navbar a {
+            color: #e6f0ea;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 700;
+            position: relative;
+            transition: color 0.7s ease;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 6px;
+            bottom: -15px;
+            left: 0;
+            background: #a5d6a7;
+            transition: width 0.7s ease;
+            border-radius: 4px;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        .navbar a:hover {
+            color: #a5d6a7;
+        }
+
+        .progress-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 12px;
+            background: linear-gradient(90deg, #4caf50, #a5d6a7);
+            z-index: 1000;
+            transition: width 0.7s ease;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.8);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.94);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .modal img {
+            max-width: 95%;
+            max-height: 95%;
+            border-radius: 30px;
+            border: 12px solid #4caf50;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            animation: zoomIn 0.8s ease;
+            transition: transform 0.5s ease;
+        }
+
+        .modal img:hover {
+            transform: scale(1.08);
+        }
+
+        @keyframes zoomIn {
+            from { transform: scale(0.5); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 60px;
+            right: 60px;
+            color: #e6f0ea;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.7s ease;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-close:hover {
+            color: #a5d6a7;
+            transform: rotate(180deg);
+        }
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 60px;
+            right: 60px;
+            background: #4caf50;
+            color: #e6f0ea;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.7s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-to-top:hover {
+            background: #a5d6a7;
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4caf50;
+            color: #e6f0ea;
+            padding: 14px 20px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        footer {
+            background: rgba(26, 43, 29, 0.97);
+            padding: 60px 40px;
+            text-align: center;
+            border-top: 6px solid #4caf50;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        footer p {
+            font-size: 1.2rem;
+            color: #c8e6c9;
+            margin-bottom: 20px;
+        }
+
+        footer .social-links {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 1400px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .spec-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container iframe {
+                height: 700px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container iframe {
+                height: 600px;
+            }
+
+            .content {
+                padding: 6rem 5rem;
+                max-width: 95%;
+            }
+
+            h1 {
+                font-size: 4rem;
+            }
+
+            p {
+                font-size: 1.4rem;
+            }
+
+            .navbar ul {
+                gap: 5rem;
+            }
+
+            .navbar a {
+                font-size: 1.4rem;
+            }
+
+            .buttons {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .scroll-to-top {
+                width: 70px;
+                height: 70px;
+                bottom: 40px;
+                right: 40px;
+            }
+
+            .slider {
+                height: 100vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container iframe {
+                height: 500px;
+            }
+
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+
+            .modal-close {
+                top: 40px;
+                right: 40px;
+                font-size: 3rem;
+            }
+
+            .spec-section {
+                padding: 40px;
+            }
+
+            .slider {
+                height: 90vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#slide1" class="tooltip" data-tooltip="Úvodní stránka mého světa">Úvod</a></li>
+            <li><a href="#slide2" class="tooltip" data-tooltip="Inspirativní video o superautech">Video</a></li>
+            <li><a href="#slide3" class="tooltip" data-tooltip="Galerie exkluzivních vozů">Galerie</a></li>
+            <li><a href="#slide4" class="tooltip" data-tooltip="Technické specifikace vozů">Specifikace</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider">
+        <div class="slide slide1" id="slide1">
+            <div class="content">
+                <h1>Vítejte v mém webu!</h1>
+               
+            </div>
+        </div>
+        <div class="slide slide2" id="slide2">
+            <div class="video-container">
+              
+            
+                <iframe src=""  frameborder="0" height="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="slide slide3" id="slide3">
+            <div class="gallery">
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1541348263662-e068672d936b" alt="Ford Mustang GT King Cobra">
+                    <figcaption>Ford Mustang GT King Cobra - Ikona s výkonem 900 koní</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1616423854465-3cb61e074743" alt="Dodge Challenger SRT Demon 170 Black">
+                    <figcaption>Dodge Challenger SRT Demon 170 Black - Bestie s 1025 koňmi</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027" alt="Lamborghini Temerario Tmavě modrý">
+                    <figcaption>Lamborghini Temerario Tmavě modrý - Hybridní revoluce</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a" alt="Porsche Carrera GT">
+                    <figcaption>Porsche Carrera GT - Klasika závodní dokonalosti</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1557002666-3c36357f375a" alt="GR Supra Racing Concept">
+                    <figcaption>GR Supra Racing Concept - Japonský závodní sen</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1611657365907-1ca5d9799f59" alt="Ferrari F80">
+                    <figcaption>Ferrari F80 - Hypercar s italskou duší</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1511407397940-d57f68e81203" alt="Chevrolet Corvette Z06">
+                    <figcaption>Chevrolet Corvette Z06 - Americká legenda s 670 koňmi</figcaption>
+                </figure>
+                <figure>
+                    <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023" alt="McLaren 720S">
+                    <figcaption>McLaren 720S - Britský klenot s aerodynamikou</figcaption>
+                </figure>
+            </div>
+        </div>
+        <div class="slide slide4" id="slide4">
+            <div class="spec-section">
+                <h2>Technické specifikace</h2>
+                <div class="spec-grid">
+                    <div class="spec-card">
+                        <h3>Ford Mustang GT King Cobra</h3>
+                        <ul>
+                            <li>Výkon: 900 koní</li>
+                            <li>Motor: 5.0L V8 Supercharged</li>
+                            <li>Zrychlení 0-100 km/h: 3.2 s</li>
+                            <li>Maximální rychlost: 320 km/h</li>
+                            <li>Převodovka: 6-stupňová manuální</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>Dodge Challenger SRT Demon 170 Black</h3>
+                        <ul>
+                            <li>Výkon: 1025 koní</li>
+                            <li>Motor: 6.2L V8 Supercharged</li>
+                            <li>Zrychlení 0-100 km/h: 1.66 s</li>
+                            <li>Maximální rychlost: 346 km/h</li>
+                            <li>Převodovka: 8-stupňová automatická</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>Lamborghini Temerario Tmavě modrý</h3>
+                        <ul>
+                            <li>Výkon: 900 koní (hybridní systém)</li>
+                            <li>Motor: 4.0L V8 Twin-Turbo + elektromotory</li>
+                            <li>Zrychlení 0-100 km/h: 2.7 s</li>
+                            <li>Maximální rychlost: 340 km/h</li>
+                            <li>Převodovka: 8-stupňová dvouspojková</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>Porsche Carrera GT</h3>
+                        <ul>
+                            <li>Výkon: 612 koní</li>
+                            <li>Motor: 5.7L V10</li>
+                            <li>Zrychlení 0-100 km/h: 3.9 s</li>
+                            <li>Maximální rychlost: 330 km/h</li>
+                            <li>Převodovka: 6-stupňová manuální</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>GR Supra Racing Concept</h3>
+                        <ul>
+                            <li>Výkon: 500 koní</li>
+                            <li>Motor: 3.0L Inline-6 Turbo</li>
+                            <li>Zrychlení 0-100 km/h: 3.8 s</li>
+                            <li>Maximální rychlost: 300 km/h</li>
+                            <li>Převodovka: 6-stupňová manuální</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>Ferrari F80</h3>
+                        <ul>
+                            <li>Výkon: 1200 koní</li>
+                            <li>Motor: 3.0L V6 Hybrid</li>
+                            <li>Zrychlení 0-100 km/h: 2.15 s</li>
+                            <li>Maximální rychlost: 350 km/h</li>
+                            <li>Převodovka: 8-stupňová dvouspojková</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>Chevrolet Corvette Z06</h3>
+                        <ul>
+                            <li>Výkon: 670 koní</li>
+                            <li>Motor: 5.5L V8</li>
+                            <li>Zrychlení 0-100 km/h: 2.6 s</li>
+                            <li>Maximální rychlost: 315 km/h</li>
+                            <li>Převodovka: 8-stupňová dvouspojková</li>
+                        </ul>
+                    </div>
+                    <div class="spec-card">
+                        <h3>McLaren 720S</h3>
+                        <ul>
+                            <li>Výkon: 720 koní</li>
+                            <li>Motor: 4.0L V8 Twin-Turbo</li>
+                            <li>Zrychlení 0-100 km/h: 2.9 s</li>
+                            <li>Maximální rychlost: 341 km/h</li>
+                            <li>Převodovka: 7-stupňová dvouspojková</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="tooltip" data-tooltip="Přejít na předchozí slajd" onclick="prevSlide()"><i class="fas fa-arrow-left"></i> Předchozí</button>
+            <button class="tooltip" data-tooltip="Přejít na další slajd" onclick="nextSlide()">Další <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <div class="modal" id="imageModal">
+        <span class="modal-close" onclick="closeModal()">×</span>
+        <img id="modalImage" src="" alt="Modal Image">
+    </div>
+
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <footer>
+        <p>© 2025 Luxusní svět superaut. Všechna práva vyhrazena.</p>
+        <div class="social-links">
+            <a href="https://facebook.com" target="_blank" class="tooltip" data-tooltip="Sledujte mě na Facebooku"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" class="tooltip" data-tooltip="Podívejte se na mé fotky"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="tooltip" data-tooltip="Moje tweety"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com" target="_blank" class="tooltip" data-tooltip="Spojte se se mnou"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        const progressBar = document.getElementById('progressBar');
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const scrollToTop = document.getElementById('scrollToTop');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'exiting');
+                if (i === index) {
+                    slide.classList.add('active');
+                } else if (i === currentSlide) {
+                    slide.classList.add('exiting');
+                }
+            });
+            currentSlide = index;
+            updateProgressBar();
+        }
+
+        function nextSlide() {
+            const nextIndex = (currentSlide + 1) % totalSlides;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+            showSlide(prevIndex);
+        }
+
+        function updateProgressBar() {
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        // Auto-slide functionality
+        let autoSlide = setInterval(nextSlide, 15000);
+
+        // Pause auto-slide on hover
+        document.querySelector('.slider').addEventListener('mouseenter', () => {
+            clearInterval(autoSlide);
+        });
+
+        document.querySelector('.slider').addEventListener('mouseleave', () => {
+            autoSlide = setInterval(nextSlide, 15000);
+        });
+
+        // Smooth scroll for navbar links
+        document.querySelectorAll('.navbar a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const slideId = this.getAttribute('href').substring(1);
+                const slideIndex = Array.from(slides).findIndex(slide => slide.id === slideId);
+                showSlide(slideIndex);
+            });
+        });
+
+        // Gallery image modal
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeModal() {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on click outside
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Scroll-to-top functionality
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 600) {
+                scrollToTop.classList.add('visible');
+            } else {
+                scrollToTop.classList.remove('visible');
+            }
+        });
+
+        scrollToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'Escape' && modal.style.display === 'flex') closeModal();
+        });
+
+        // Touch swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.querySelector('.slider').addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.querySelector('.slider').addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            if (touchStartX - touchEndX > 50) nextSlide();
+            if (touchEndX - touchStartX > 50) prevSlide();
+        });
+
+        // Lazy loading for gallery images
+        document.querySelectorAll('.gallery img').forEach(img => {
+            img.setAttribute('loading', 'lazy');
+        });
+
+        // Preload images for smoother transitions
+        const preloadImages = [
+            'https://images.unsplash.com/photo-1541348263662-e068672d936b',
+            'https://images.unsplash.com/photo-1616423854465-3cb61e074743',
+            'https://images.unsplash.com/photo-1550355291-bbee04a92027',
+            'https://images.unsplash.com/photo-1514316454349-750a7fd3da3a',
+            'https://images.unsplash.com/photo-1557002666-3c36357f375a',
+            'https://images.unsplash.com/photo-1611657365907-1ca5d9799f59',
+            'https://images.unsplash.com/photo-1511407397940-d57f68e81203',
+            'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023'
+        ];
+
+        preloadImages.forEach(src => {
+            const img = new Image();
+            img.src = src;
+        });
+
+        // Initialize the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
