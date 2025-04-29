@@ -287,3 +287,111 @@ footer {
         margin: 5px 0;
     }
 }
+/* Vylepšená responzivita pro mobily */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    header {
+        padding: 1.5rem 0;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    /* Navigace */
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+
+    nav a {
+        padding: 0.8rem 0;
+        font-size: 0.9rem;
+    }
+
+    /* O mně sekce */
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* Portfolio */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .portfolio-item {
+        padding: 1rem;
+    }
+
+    /* Dovednosti */
+    .skill-name {
+        font-size: 0.9rem;
+    }
+
+    /* Kontaktní formulář */
+    #contact-form {
+        padding: 0 10px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.7rem;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 0.9rem;
+    }
+
+    /* Sociální ikony */
+    .social-links {
+        gap: 1rem;
+    }
+
+    .social-links a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Extra malé obrazovky (např. iPhone SE) */
+@media (max-width: 400px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h2 i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    nav li {
+        margin: 0 5px;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
