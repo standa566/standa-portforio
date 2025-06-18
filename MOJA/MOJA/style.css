@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
 }
 
 body {
@@ -394,4 +394,69 @@ footer {
         width: 120px;
         height: 120px;
     }
+}
+
+
+.text-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Přidejte toto na konec vašeho CSS souboru */
+
+/* Vylepšená typografie */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+.text-content {
+    font-size: 1.1rem;
+}
+
+/* Vylepšené animace */
+.portfolio-item {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 180, 216, 0.2);
+}
+
+/* Vylepšené tlačítko */
+button[type="submit"] {
+    transition: all 0.3s;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* Vylepšené sociální ikony */
+.social-links a {
+    transition: transform 0.3s;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Vylepšené skill bary */
+.skill-level {
+    transition: width 1.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* Vylepšený header */
+header {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+}
+
+/* Vylepšený kontaktní formulář */
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 180, 216, 0.2);
 }

@@ -1,73 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Aktualizace roku v patičce
-    document.getElementById('year').textContent = new Date().getFullYear();
+// Přidejte toto na konec vašeho script.js
 
-    // Hladký scroll pro navigaci
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - 70,
-                behavior: 'smooth'
-            });
-        });
+// Vylepšené animace při scrollování
+const animateOnScroll = () => {
+    const elements = document.querySelectorAll('.content-wrapper, .portfolio-item, .form-group');
+    
+    elements.forEach(element => {
+        const elementPosition = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.3;
+        
+        if (elementPosition < screenPosition) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
     });
+};
 
-    // Odeslání formuláře
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Zde by bylo reálné odeslání formuláře
-            const formData = new FormData(this);
-            const formValues = Object.fromEntries(formData.entries());
-            
-            console.log('Formulář odeslán:', formValues);
-            
-            // Ukázka úspěšného odeslání
-            alert('Děkuji za vaši zprávu! Brzy se vám ozvu zpět.');
-            this.reset();
-        });
-    }
-
-    // Animace skill barů při scrollování
-    const skillBars = document.querySelectorAll('.skill-level');
-    
-    function animateSkillBars() {
-        skillBars.forEach(bar => {
-            const width = bar.style.width;
-            bar.style.width = '0';
-            
-            setTimeout(() => {
-                bar.style.width = width;
-            }, 100);
-        });
-    }
-    
-    // Spustit animaci při načtení
-    animateSkillBars();
-    
-    // Přidat Intersection Observer pro animaci při scrollování
-    const observerOptions = {
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateSkillBars();
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    const skillsSection = document.getElementById('dovednosti');
-    if (skillsSection) {
-        observer.observe(skillsSection);
-    }
+// Nastavení počátečního stavu pro animace
+document.querySelectorAll('.content-wrapper, .portfolio-item, .form-group').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
 });
+
+// Spuštění při načtení
+window.addEventListener('load', () => {
+    animateOnScroll();
+    setTimeout(() => {
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '1';
+        });
+    }, 300);
+});
+
+// Spuštění při scrollování
+window.addEventListener('scroll', animateOnScroll);

@@ -3,16 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Můj Osobní Web</title>
+    <meta name="description" content="Osobní web Stanislava Naraievského - studenta a nadšence do webového designu">
+    <title>Stanislav Naraievskyi | Osobní Web</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script> 
 </head>
 <body>
-    
+    <script>
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => t,
+            smoothWheel: true,
+            smoothTouch: true,
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
     <header>
         <div class="container">
-            <h1>Naraievskyi</h1>
-            <p>osobny web | student | style</p>
+            <h1>Stanislav Naraievskyi</h1>
+            <p>Webový nadšenec | Student | Designér</p>
         </div>
     </header>
 
@@ -34,9 +51,9 @@
                 <div class="content-wrapper">
                     <img src="https://i.pinimg.com/736x/98/1d/6b/981d6b2e0ccb5e968a0618c8d47671da.jpg" alt="Profilová fotka" class="profile-img">
                     <div class="text-content">
-                        <p>Vítejte na mém osobním webu! </p>
-                        <p>Specializuji se na filmech serialech a tak dal... </p>
-                        <p>Ve volném čase rád [divat a odpočivat].</p>
+                        <p>Ahoj! Jmenuji se Stanislav Naraievskyi a jsem student se zájmem o webový design a vývoj.</p>
+                        <p>Specializuji se na tvorbu moderních a responzivních webových stránek. Mám zkušenosti s HTML, CSS a JavaScript.</p>
+                        <p>Ve volném čase rád sleduji filmy a seriály</p>
                     </div>
                 </div>
             </div>
@@ -48,23 +65,23 @@
                 <div class="portfolio-grid">
                     <a href="https://standa-portforio-x1kq.vercel.app/" target="_blank" class="portfolio-item-link">
                         <div class="portfolio-item">
-                            
-                            <h3>Projekt 1</h3>
-                            <p>prvni muj web.</p>
+                            <h3>Můj první web</h3>
+                            <p>Jednoduchá osobní prezentace s responzivním designem.</p>
                         </div>
                     </a>
                     <a href="https://standa-portforio-jr4j.vercel.app/" target="_blank" class="portfolio-item-link">
                         <div class="portfolio-item">
-                            
-                            <h3>Projekt 2</h3>
-                            <p>muj druhy web.</p>
+                            <h3>Vylepšené portfolio</h3>
+                            <p>Druhá verze mého portfolia s lepším designem.</p>
                         </div>
                     </a>
                     <a href="https://standa-portforio-jec2.vercel.app/" target="_blank" class="portfolio-item-link">
                         <div class="portfolio-item">
-                            <h3>Projekt 3</h3>
-                            <p>muj treti web kde ja ptalse udelat animace<p> 
+                            <h3>Animovaný web</h3>
+                            <p>Experiment s CSS animacemi a moderním designem.</p>
                         </div>
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -75,25 +92,25 @@
                     <div class="skill-item">
                         <div class="skill-name">HTML & CSS</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;"></div>
+                            <div class="skill-level" style="width: 60%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">JavaScript</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 40%;"></div>
+                            <div class="skill-level" style="width: 20%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">React</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 70%;"></div>
+                            <div class="skill-level" style="width: 50%;"></div>
                         </div>
                     </div>
                     <div class="skill-item">
                         <div class="skill-name">UI/UX Design</div>
                         <div class="skill-bar">
-                            <div class="skill-level" style="width: 20%;"></div>
+                            <div class="skill-level" style="width: 15%;"></div>
                         </div>
                     </div>
                 </div>
@@ -119,10 +136,10 @@
                     <button type="submit">Odeslat</button>
                 </form>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@ktogri?_t=ZM-8xJpXwjRSH0&_r=1" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://github.com/standa566" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://t.me/Stanislav_profil" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                    <a href="https://www.instagram.com/__stanik__?igsh=MTlmd3l4ZDExOXlmZw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </section>
@@ -130,7 +147,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; <span id="year"></span> Jméno Příjmení. Všechna práva vyhrazena.</p>
+            <p>&copy; <span id="year"></span> Stanislav Naraievskyi</p>
         </div>
     </footer>
 
